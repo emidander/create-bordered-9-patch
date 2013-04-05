@@ -32,13 +32,13 @@ EOS
   opt :width, "Image width", :type => :int
   opt :height, "Image height", :type => :int
 
-  opt :margin, "All margins", :default => 1
+  opt :margin, "All margins", :default => 2
   opt :topmargin, "Top margin", :type => :int
   opt :bottommargin, "Bottom margin", :type => :int
   opt :leftmargin, "Left margin", :type => :int
   opt :rightmargin, "Right margin", :type => :int
 
-  opt :padding, "All paddings", :default => 1
+  opt :padding, "All paddings", :default => 2
   opt :toppadding, "Top padding", :type => :int
   opt :bottompadding, "Bottom padding", :type => :int
   opt :leftpadding, "Left padding", :type => :int
@@ -68,7 +68,7 @@ rightmargin = opts[:rightmargin] || opts[:margin]
 bottommargin = opts[:bottommargin] || opts[:margin]
 leftmargin = opts[:leftmargin] || opts[:margin]
 
-if topmargin < 1 || rightmargin < 1 || bottommargin < 1 || leftmargin < 1
+if topmargin < 2 || rightmargin < 2 || bottommargin < 2 || leftmargin < 2
   puts "WARNING: Images with margin smaller than 1 will not look very nice!"
 end
 
@@ -79,8 +79,8 @@ bottompadding = opts[:bottompadding] || opts[:padding]
 leftpadding = opts[:leftpadding] || opts[:padding]
 
 # size
-min_width = leftmargin + rightmargin + 1
-min_height = topmargin + bottommargin + 1
+min_width = leftmargin + rightmargin + 3
+min_height = topmargin + bottommargin + 3
 width = opts[:width] || min_width
 height = opts[:height] || min_height
 if width < min_width || height < min_height
